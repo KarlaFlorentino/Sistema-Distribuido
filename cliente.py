@@ -27,19 +27,21 @@ def processar():
 		i+=1
 	if conectou == False:
 		print("Erro: Não foi possível conectar com o middleware.")
+		soquete.close()
 
 #Obtem resultado do middleware
 def obterResultado(soquete):
 	resultado = soquete.recv(1024)
 	if resultado == "Tentar":
-		tentar = raw_input("Tentar novamente?(s/n)")
+		tentar = raw_input("Tentar novamente?(s/n): ")
 		if tentar == 's' or tentar =='S':
 			soquete.send(tentar)
 			obterResultado(soquete)
 		else:
 			soquete.close()
-	if resultado == "Erro":
+	elif resultado == "Erro":
 		print("Erro: a operação não pode ser realizada!")
+		soquete.close()
 	else:
 		print(resultado)
 		soquete.close()

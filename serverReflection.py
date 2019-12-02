@@ -29,6 +29,7 @@ def threadPool (conexao, cliente):
   	conexao.send(str(resultado))
   except:
         pass
+
   # Encerra a conexao com o middleware
   conexao.close()
 

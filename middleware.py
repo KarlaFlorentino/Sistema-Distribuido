@@ -4,11 +4,10 @@
 import socket
 import threading
 from datetime import datetime
-import time
 
 MID_ADDRESS = '127.0.0.1' 
 MID_PORT = 5001
-SERVERNAME_ADDRESS = ['127.0.0.1','10.90.37.4']
+SERVERNAME_ADDRESS = ['0.0.0.0','127.0.0.1']
 SERVERNAME_PORT = 5002
 SERVER_ADDRESS = []
 
